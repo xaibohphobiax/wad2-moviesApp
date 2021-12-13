@@ -10,6 +10,8 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import MovieReviews from "../movieReviews"
+//import MovieCredits from "../movieCredits"
+//import Box from '@material-ui/material/Box';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -77,18 +79,22 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
         ))}
       </Paper>
 
-      <Fab
-        color="secondary"
-        variant="extended"
-        onClick={() =>setDrawerOpen(true)}
-        className={classes.fab}
-      >
+        <Fab
+          color="secondary"
+          variant="extended"
+          onClick={() =>setDrawerOpen(true)}
+          className={classes.fab}
+        >
         <NavigationIcon />
         Reviews
-      </Fab>
-      <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
-        <MovieReviews movie={movie} />
-      </Drawer>
+        </Fab>
+        <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+          <MovieReviews movie={movie} />
+        </Drawer>
+      
+
+        
+
     </>
   );
 };
