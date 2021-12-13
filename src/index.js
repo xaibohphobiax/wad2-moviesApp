@@ -6,6 +6,7 @@ import MoviePage from "./pages/movieDetailsPage";
 import FavoriteMoviesPage from "./pages/favoriteMoviesPage"; // NEW
 import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
 import NowPlayingMoviesPage from "./pages/nowPlayingMoviesPage";
+import PopularMoviesPage from "./pages/popularMoviesPage";
 import TrendingMoviesPage from "./pages/trendingMoviesPage";
 import WatchProviderPage from "./pages/watchProviderPage";
 import MovieReviewPage from "./pages/movieReviewPage";
@@ -36,6 +37,7 @@ const App = () => {
           <Switch>
             <Route exact path="/watch/providers/regions" component={WatchProviderPage} />
             <Route exact path="/trending" component={TrendingMoviesPage} />
+            <Route exact path="/movies/popular" component={PopularMoviesPage} />
             <Route exact path="/movies/now_playing" component={NowPlayingMoviesPage} />
             <Route exact path="/movies/upcoming" component={UpcomingMoviesPage} />
             <Route exact path="/movies/favorites" component={FavoriteMoviesPage} />
