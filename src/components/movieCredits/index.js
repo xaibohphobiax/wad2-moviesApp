@@ -1,4 +1,4 @@
-/*import React, { useEffect, useState }  from "react";
+import React, { useEffect, useState }  from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -21,10 +21,14 @@ export default function MovieCredits({ movie }) {
 
   useEffect(() => {
     getMovieCredits(movie.id).then((credits) => {
+      console.log(credits)
       setCredits(credits);
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
   }, []);
+  /*console.log('!!!!!!!!!')
+  console.log(movie.id)
+  console.log(credits)*/
 
   return (
     <TableContainer component={Paper}>
@@ -37,6 +41,7 @@ export default function MovieCredits({ movie }) {
           </TableRow>
         </TableHead>
         <TableBody>
+          
           {credits.map((r) => (
             <TableRow key={r.id}>
               <TableCell component="th" scope="row">{r.name}</TableCell>
@@ -48,4 +53,4 @@ export default function MovieCredits({ movie }) {
       </Table>
     </TableContainer>
   );
-}*/
+}

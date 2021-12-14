@@ -10,8 +10,8 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
 import MovieReviews from "../movieReviews"
-//import MovieCredits from "../movieCredits"
 //import Box from '@material-ui/material/Box';
+import MovieCredits from "../movieCredits";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -35,7 +35,8 @@ const useStyles = makeStyles((theme) => ({
 const MovieDetails = ({ movie }) => {  // Don't miss this!
   const classes = useStyles();
   const [drawerOpen, setDrawerOpen] = useState(false);
-
+  console.log('testing')
+  console.log(movie)
   return (
     <>
       <Typography variant="h5" component="h3">
@@ -78,6 +79,19 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
           </li>
         ))}
       </Paper>
+      
+        <Fab
+          variant="extended"
+          onclick={() => setDrawerOpen(true)}
+        >
+        <NavigationIcon />
+          Credits
+          <Drawer anchor="bottom" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
+            <MovieCredits movie={movie} />
+          </Drawer>
+        </Fab>
+
+      
 
         <Fab
           color="secondary"
@@ -91,10 +105,6 @@ const MovieDetails = ({ movie }) => {  // Don't miss this!
         <Drawer anchor="top" open={drawerOpen} onClose={() => setDrawerOpen(false)}>
           <MovieReviews movie={movie} />
         </Drawer>
-      
-
-        
-
     </>
   );
 };

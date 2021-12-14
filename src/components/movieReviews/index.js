@@ -25,9 +25,11 @@ export default function MovieReviews({ movie }) {
     getMovieReviews(movie.id).then((reviews) => {
       setReviews(reviews);
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
+  console.log(reviews)
+  console.log(movie.id)
   return (
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="reviews table">

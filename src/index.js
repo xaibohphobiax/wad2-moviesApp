@@ -8,8 +8,8 @@ import UpcomingMoviesPage from "./pages/upcomingMoviesPage";
 import NowPlayingMoviesPage from "./pages/nowPlayingMoviesPage";
 import PopularMoviesPage from "./pages/popularMoviesPage";
 import TrendingMoviesPage from "./pages/trendingMoviesPage";
-import WatchProviderPage from "./pages/watchProviderPage";
 import MovieReviewPage from "./pages/movieReviewPage";
+import MovieCreditPage from "./pages/movieCreditPage";
 import SiteHeader from './components/siteHeader'
 import { QueryClientProvider, QueryClient } from "react-query";
 import { ReactQueryDevtools } from 'react-query/devtools'
@@ -35,7 +35,6 @@ const App = () => {
         <MoviesContextProvider>
             {" "}
           <Switch>
-            <Route exact path="/watch/providers/regions" component={WatchProviderPage} />
             <Route exact path="/trending" component={TrendingMoviesPage} />
             <Route exact path="/movies/popular" component={PopularMoviesPage} />
             <Route exact path="/movies/now_playing" component={NowPlayingMoviesPage} />
@@ -45,6 +44,7 @@ const App = () => {
             <Route exact path="/" component={HomePage} />
             <Route exact path="/reviews/form" component={AddMovieReviewPage} />
             <Route path="/reviews/:id" component={MovieReviewPage} />
+            <Route path="/credits/:id" component={MovieCreditPage} />
             
             <Redirect from="*" to="/" />
           </Switch>
